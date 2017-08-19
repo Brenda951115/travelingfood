@@ -18,21 +18,54 @@ body, body > p, body > ol, body > ul, body > td { margin: 8px !important }
 
 #banner {
   position: relative;
-  min-height: 40px;
-  background: #DC7633;
+  min-height: 70px;
+  background: #BF0506;
   padding: 10px;
-  border-bottom: 2px solid;
+  border-bottom: 8px solid;
+  border-left: 8px solid;
   font: small-caps 40px/40px "Times New Roman", serif;
-  color: #BA4A00;
+  color: #80BF0506;
   text-align: center;
-
+  border-radius: 10px;
+  
+  
   img {
     position: absolute;
     top: 0;
     left: 0;
     width: 200px;
   }
+  #text_lol{
+	  position: absolute;
+		top: 6;
+		left: 7;
+		width: 1200px;
+		font-size: 1em;
+		color:#ffffff;
+  }
+  
+  select{
+	background: transparent;
+    border: none;
+    font-size: 14px;
+    height: 29px;
+    padding: 5px;
+    width: 100px;
+  }
+  
 }
+
+img {
+	width: 100px;
+}
+
+#doss{
+	img {
+		width: 300px;
+	}
+}
+
+
 
 #notice {
   color: #000000 !important;
@@ -48,8 +81,9 @@ body, body > p, body > ol, body > ul, body > td { margin: 8px !important }
 }
 
 #columns {
-  background: #EDBB99;
+  background: white;
   display: flex;
+  color: #80000000;
 
   #main {
     padding: 1em;
@@ -59,8 +93,11 @@ body, body > p, body > ol, body > ul, body > td { margin: 8px !important }
 
   #side {
     padding: 1em 2em;
-    background: #FAE5D3;
-
+    background: #BF0506;
+	border-radius: 10px;
+	border-bottom: 8px solid;
+	border-left: 8px solid;
+	
     form, div {
       display: inline;
     }
@@ -81,14 +118,16 @@ body, body > p, body > ol, body > ul, body > td { margin: 8px !important }
     }
 
     ul {
-      padding: 0;
-
+		padding-left: 0;
+		margin-bottom: 1;
+		list-style:none;
       li {
-        list-style: none;
-
+		color: #ffffff;
+		padding-bottom: 2ex;
         a {
-          color: #000;
-          font-size: small;
+          color: #ffffff;
+          font-size: medium;
+		  text-decoration:none;  
         }
       }
     }
@@ -101,7 +140,7 @@ body, body > p, body > ol, body > ul, body > td { margin: 8px !important }
 
     legend {
       color: #000000;
-      background: #DC7633;
+      background: #8fe86f;
       font-family: sans-serif;
       padding: 0.2em 1em;
     }

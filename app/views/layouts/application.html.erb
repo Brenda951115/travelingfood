@@ -5,6 +5,11 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= csrf_meta_tags %>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyzvNDff7DcvGP8W61amXY8oIwNBzwFLI&libraries=places&callback=initMap" async defer>
     </script>
             
@@ -70,8 +75,12 @@
         <%= javascript_tag "$('.locale input').hide()" %>
       <% end %>
         <%= image_tag 'logoTravelingFood', alt: 'TravekingFood' %>
+		<p id="text_lol">
+			La mejor comida, la encuentras aquí.
+		</p>
       <span class="title"><%= @page_title %></span>
     </div>
+	
     <div id="columns">
       <div id="side">
         <div id="cart">
@@ -83,10 +92,25 @@
         </div>
 
         <ul>
-          <li><a href="http://www...."><%= t('.Inicio') %></a></li>
-            <li><%= link_to "Ordenes", orders_path%></li>
-          <li><a href="http://www..../news"><%= t('.Noticias') %></a></li>
-          <li><a href='http://www..../contact'><%= t('.Contacto') %></a></li>
+          <li>
+			<a href="http://www...."><%= t('.Inicio') %></a>
+		  </li>
+		  
+          <li>
+			<%= link_to "Ordenes", orders_path%>
+		  </li>
+          <li>
+			<a href="http://www..../news"><%= t('.Noticias') %></a>
+		  </li>
+          <li>
+			<a href='http://www..../contact'><%= t('.Contacto') %></a>
+		  </li>
+		  <li>
+			<a data-toggle="modal" data-target="#myModal">QR</a>
+		  </li>
+		  <li>
+			<a data-toggle="modal" data-target="#myModalDos">Información</a>
+		  </li>
         </ul>
       </div>
 
@@ -105,6 +129,66 @@
       </div>
       </div>
     </div>
+	
+	
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog modal-lg">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <button type="button" class="close" data-dismiss="modal">&times;</button>
+			  <h4 class="modal-title">Realidad aumentada</h4>
+			</div>
+			<div class="modal-body">
+			  <center id="doss">
+					<%= image_tag "http://marcheloo.com/Images/logo/159%20%20nana%20pancha.jpg", :alt => "Facebook", :title => "Facebook"%>
+			  </center>
+			</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		  </div>
+		</div>
+	</div>
+
+	
+	<div class="modal fade" id="myModalDos" role="dialog">
+		<div class="modal-dialog modal-lg">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <button type="button" class="close" data-dismiss="modal">&times;</button>
+			  <h1 class="modal-title">Información de los restauranes</h1>
+			</div>
+			<div class="modal-body">
+				
+				<p><h4>El Carruaje Restaurante</h4>
+					<%= image_tag "http://www.viajaraitalia.com/wp-content/uploads/2012/06/hoteles-4-estrellas-napoles.png", :alt => "Facebook", :title => "Facebook"%>
+				<b>Parrilla</b><br/>Dolores Hidalgo Cuna de la Independencia Nacional, Gto.Ambiente relajado · Buenos cócteles
+				<br/>
+				<%= image_tag "https://lh3.googleusercontent.com/-l7HgvIAaUvg/V_LZ_PLVfEI/AAAAAAAAAys/Zp4hkmXrfTwOWMiBw8IKyFPdy1XUsBCqwCJkC/w99-h99-n-k-no/", :alt => "Facebook", :title => "Facebook"%>
+				</p>
+			  
+				<p><h4>Nana Pancha Pizza y Café</h4>
+					<%= image_tag "https://vignette2.wikia.nocookie.net/gunsnroses/images/e/e4/4.5_estrellas.png/revision/latest?cb=20100905204438&path-prefix=es", :alt => "Facebook", :title => "Facebook"%>
+				<b>Cafetería</b><br/>Dolores Hidalgo Cuna de la Independencia Nacional, Gto. Ambiente relajado · Agradable · Informal
+				<br/>
+				<%= image_tag "https://lh3.googleusercontent.com/-UMKGtQf0Wkg/WNsmETqowCI/AAAAAAAAAXI/gx3F0DRKFRoGNlBWceYr8xflsWBy6fIaACLIB/w99-h99-n-k-no/", :alt => "Facebook", :title => "Facebook"%>
+				</p>
+				
+				<p><h4>Damonica</h4>
+					<%= image_tag "https://vignette2.wikia.nocookie.net/gunsnroses/images/e/e4/4.5_estrellas.png/revision/latest?cb=20100905204438&path-prefix=es", :alt => "Facebook", :title => "Facebook"%>
+				<b>Cafetería</b><br/>Dolores Hidalgo Cuna de la Independencia
+				<br/>
+				<%= image_tag "https://lh3.googleusercontent.com/-UMKGtQf0Wkg/WNsmETqowCI/AAAAAAAAAXI/gx3F0DRKFRoGNlBWceYr8xflsWBy6fIaACLIB/w99-h99-n-k-no/", :alt => "Facebook", :title => "Facebook"%>
+				</p>
+			  
+			</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		  </div>
+		</div>
+	</div>
+	
   </body>
 </html>
  <!--Galeria de comida dolorence API AIzaSyC5z87QigtMXQJjCW9cX2245_hpDBCVRyA, AIzaSyCyzvNDff7DcvGP8W61amXY8oIwNBzwFLI
